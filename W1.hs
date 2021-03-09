@@ -1,5 +1,4 @@
 module W1 where
-
 -- Week 1:
 --   * defining functions
 --   * basic expressions
@@ -29,9 +28,8 @@ quadruple x = double (double x)
 -- Ex 4: define the function poly2. It should take four arguments of
 -- type Double, a, b, c, and x and return a*x^2+b*x+c. Give poly2 a
 -- type signature, i.e. poly2 :: something.
-
-poly2 = undefined
-
+poly2 :: Double -> Double -> Double -> Double -> Double
+poly2 a b c x = a*x*x+b*x+c
 -- Ex 5: define the function eeny that returns "eeny" for even inputs
 -- and "meeny" for odd inputs.
 --
@@ -92,9 +90,8 @@ power n k = n * power n (k - 1)
 -- division.
 
 ilog2 :: Integer -> Integer
-ilog2 _ = 1
-ilog2 2 = 2
-ilog2 n = ilog2 (floor (n `div` 2) :: Integer)
+ilog2 1 = 0 
+ilog2 n = 1 + ilog2 (div n 2)
 
 -- Ex 11: compute binomial coefficients using recursion. Binomial
 -- coefficients are defined by the following equations:
@@ -197,7 +194,9 @@ smallestDivisor = undefined
 -- Ps. 0 and 1 are not prime numbers
 
 isPrime :: Integer -> Bool
-isPrime = undefined
+isPrime 1 = False
+isPrime 0 = False
+isPrime n = True
 
 -- Ex 19: implement a function nextPrime that returns the first prime
 -- number that comes after the given number. Use the function isPrime
